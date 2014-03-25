@@ -1,8 +1,8 @@
 {
     "brandName": "Supreme Enterprises Tech",
-    "homeUrl": "#app/1", 
-    "homeMenuId": "tab1", 
-    "activeMenuId": "tab1", 
+    "homeUrl": "#app/1",
+    "homeMenuId": "tab1",
+    "activeMenuId": "tab1",
     "rightMenu": [{
         "menuId": "tab1",
         "name": "Tab 1",

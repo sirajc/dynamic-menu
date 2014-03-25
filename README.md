@@ -2,6 +2,12 @@
 
 Dynamic Menu is powerful [AngularJS](http://angularjs.org) directive for navigation built using [Bootstrap](http://getbootstrap.com).
 
+## Features
+- Include one angular directive and dependencies to get the Twitter Bootstrap navigation menu
+- JSON file / Rest service based Navigation menu
+- Menu to be highlighted is calculated from the URL (using `$location.path`)
+- Menu is highlighted for deep paths as well, for ex `r1/someobject/:detailId` path will hight the `r1` (If `r1` is configured in JSON)
+
 ## Quick start
 
 Open console/command prompt at location where you have `index.html` file of your angular app.

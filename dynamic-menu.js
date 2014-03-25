@@ -29,13 +29,36 @@ angular.module('dynamicMenu', ['ngResource']).factory('DynamicMenuFactory', ['$r
         /* Strictly follow the JSON structure provided in dynamic-menu.json */
         return $resource('dynamic-menu/dynamic-menu.json', {}, {
             query: {
-                method: 'GET', params:{}, isArray:false
+                method: 'GET',
+                params: {},
+                isArray: false
             }
         });
     }
-]).controller('DynamicMenuController', ['$scope', 'DynamicMenuFactory',
-    function($scope, DynamicMenuFactory) {
+]).controller('DynamicMenuController', ['$scope', '$location', 'DynamicMenuFactory',
+    function($scope, $location, DynamicMenuFactory) {
         $scope.navigationDetail = DynamicMenuFactory.query();
+        $scope.$on('$routeChangeSuccess', function() {
+            var path = '#app' + $location.path();
+            var found = false;
+            $scope.navigationDetail.$promise.then(function(result) {
+                $scope.navigationDetail = result;
+                angular.forEach($scope.navigationDetail.leftMenu, function(menu) {
+                    if (path.indexOf(menu.url) == 0) {
+                        $scope.navigationDetail.activeMenuId = menu.menuId;
+                        found = true;
+                    }
+                });
+                if (!found) {
+                    angular.forEach($scope.navigationDetail.rightMenu, function(menu) {
+                        if (path.indexOf(menu.url) == 0) {
+                            $scope.navigationDetail.activeMenuId = menu.menuId;
+                            found = true;
+                        }
+                    });
+                }
+            });
+        });
     }
 ]).directive('navigationBar', function() {
     // Runs during compile
