@@ -75,6 +75,45 @@ Refresh and see that menus are now REST api based.
 
 **Note: You must not change the JSON structure**
 
+### Using the example
+
+1. Copy the example folder and configure it on your web server
+2. Copy the dynamic-menu folder inside example folder
+3. open command prompt in example folder and run `bower install`. This will install all the dependencies
+4. Open your browser and point to example folder eg `localhost/example`
+
+You might be shown Menus like this, feel free to navigate
+
+![](example/example.png)
+
+Here is the final structure of your example app
+```
+example/
+├── dynamic-menu/
+│   ├── dynamic-menu.js // All things Angular
+│   ├── dynamic-menu.html // Template used by directive
+│   ├── dynamic-menu.css // Styles for menu
+│   └── dynamic-menu.json // Sample JSON for menu
+├── bower_components/
+│   ├── angular
+│   ├── angular-resource
+│   ├── angular-route
+│   └── bootstrap
+│   └── jquery
+├── scripts
+│   ├── app.js
+├── views/
+│   ├── l1.html
+│   ├── l2.html
+│   ├── r1.html
+│   ├── r2.html
+│   ├── r3.html
+├── .bowerrc
+├── bower.json
+├── index.html
+```
+
+
 ## TODO
 - Test, Test and Test
 - Drop down menu as provided by bootstrap

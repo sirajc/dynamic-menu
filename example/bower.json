@@ -1,0 +1,27 @@
+{
+  "name": "rnd",
+  "version": "0.0.1",
+  "authors": [
+    "Sirajuddin Choudhary <sirajuddin.c@gmail.com>"
+  ],
+  "description": "RnD",
+  "main": "index.html",
+  "keywords": [
+    "RnD"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.2.15",
+    "bootstrap": "~3.1.1",
+    "angular-route": "1.2.15",
+    "angular-resource": "1.2.15"
+  }
+}
